@@ -1,6 +1,7 @@
 <html>
     <head>
         <link rel="stylesheet" href="styles.css">
+        
     </head>
     <body>
         Example text.
@@ -8,17 +9,39 @@
         <p>dolor something something</p>
 
         <div class="flex-container">
-            <div style="flex: 0 0 500px";>This is a flex item</div>
-            <div >there are many like it, but this one </div>
-            <div >is mine</div>
-            <div style="flex: 0 0 1000px">
-                <input type="number" min="0" max="9" step="1">
-                <input type="number" min="0" max="9" step="1">
-                .        
-                <input type="number" min="0" max="9" step="1">
-                <input type="number" min="0" max="9" step="1">
-           </div>
+            <div>
+                <input type="text" maxlength="1" class="num-input">
+            </div>
+
+            <div>
+                <input type="text" maxlength="1" class="num-input">
+            </div>
+            
+            <div>
+                .
+            </div>
+
+            <div>
+                <input type="text" maxlength="1" class="num-input">
+            </div>
+
+            <div>
+                <input type="text" maxlength="1" class="num-input">
+            </div>
+
+            <div>
+                <button onclick="takeInputs()">Click me!</button>
+            </div> 
+            
+            <div id="output">
+
+            </div>
+           
         </div>
 
+        
+        
+
+        <script src="script.js"></script>
     </body>
 </html>
