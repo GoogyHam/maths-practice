@@ -8,37 +8,48 @@ body {
     color: red;
   }
 
-  .flex-container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+  .container {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
     justify-content: center;
     align-items: center;
 
     background-color: grey;
-    height: 300px;
-    width: 1500px;
+    padding: 10px;
   }
 
   /* Flex Container settings*/
 
   @media (max-width:800px) {
-    .flex-container{
+    .container{
         flex-direction: column;
     }
   }
 
   /* Example, media-sensitive settings*/
   
-  .flex-container > div {
+  .container > div {
     background-color: #f1f1f1;
-    margin: 10px;
-    padding: 20px;
-    font-size: 30px;
+    margin: 1px;
+    padding: 5px;
+    font-size: 20px;
     text-align: center;
   }
 
-  .flex-container > div:hover{
+  .container > div.header {
+    grid-area: 1 / 1 / span 2 / span 5;
+    text-align: center;
+  }
+
+  .container > div.input {
+    grid-area: 3 / auto / span 1 / span 5;
+  }
+
+  .container > div.submitButton {
+    grid-area: 4/ 1 / span 1 / span 5;
+  }
+
+  .container > div:hover{
     background-color: turquoise;
     color: white;
     transition: all 0.3s ease;
@@ -46,12 +57,14 @@ body {
 
   /*Flex Item settings within the container, here the hover function lets it change colour when we mouse over it*/
 
-input[type=number], select {
+input[type=text] {
     background-color: white;
     color: black;
     padding: 14px 20px;
     margin: 8px 0;
+    width: 50px;
+    font-size: 20px;
     border: none;
-    border-radius: 4px;
+    border-radius: 10px;
     cursor: pointer;
 }
