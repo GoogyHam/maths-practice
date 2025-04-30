@@ -1,6 +1,15 @@
 const inputs = document.querySelectorAll(".num-input")
 const inputValues = [];
 
+document.getElementById("submitAnswerButton").addEventListener("click", takeInputs)
+
+document.getElementById("submitAnswerButton").addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        document.getElementById("submitAnswerButton").click()
+    }
+});
+
 function takeInputs(){
 
     inputs.forEach((input, index) => {
@@ -18,5 +27,5 @@ function takeInputs(){
     var inputAsNumber = Number(inputTotal) / 100
     /* Concatenate each object in the input array onto the string variable */
 
-    document.getElementById("output").innerHTML = "$" + inputAsNumber;
+    document.getElementById("output").innerHTML = "$" + inputAsNumber.toFixed(2);
 }
