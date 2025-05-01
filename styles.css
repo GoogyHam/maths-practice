@@ -1,18 +1,10 @@
 body {
     background-color: wheat;
   }
-  h1 {
-    color: blue;
-  }
-  p {
-    color: red;
-  }
 
   .container {
     display: grid;
     grid-template-columns: auto auto auto auto auto;
-    justify-content: center;
-    align-items: center;
 
     background-color: grey;
     padding: 10px;
@@ -41,12 +33,17 @@ body {
     text-align: center;
   }
 
+  .container > div.question {
+    grid-area: auto / 1 / span 3 / span 5;
+    font-size: 50px;
+  }
+
   .container > div.input {
-    grid-area: 3 / auto / span 1 / span 5;
+    grid-area: auto / auto / span 1 / span 5;
   }
 
   .container > div.submitButton {
-    grid-area: 4/ 1 / span 1 / span 5;
+    grid-area: auto / auto / span 1 / span 5;
   }
 
   .container > div:hover{
