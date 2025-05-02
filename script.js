@@ -1,6 +1,7 @@
 const inputs = document.querySelectorAll(".num-input")
 const inputValues = [];
-const calculation = []
+const calculation = [];
+let problemAnswer = 0;
 
 document.getElementById("submitAnswerButton").addEventListener("click", takeInputs)
 
@@ -23,23 +24,40 @@ function takeInputs(){
 
     /* Create a blank string variable*/
     
-    inputValues.forEach((value, subindex) => {
-            inputTotal+= value
+    inputValues.forEach((value, index) => {
+            inputTotal += value
     });
 
     var inputAsNumber = Number(inputTotal) / 100
     /* Concatenate each object in the input array onto the string variable */
 
+    inputs.forEach((input, index) =>{
+        input.value = ""
+    });
     document.getElementById("output").innerHTML = "$" + inputAsNumber.toFixed(2);
 
-    document.getElementById("answer").innerHTML = "$" + calculation[2].toFixed(2);
+    document.getElementById("answer").innerHTML = "$" + problemAnswer.toFixed(2);
+
+    document.getElementById("test").innerHTML = inputAsNumber + "," + problemAnswer
+
+    if (inputAsNumber === problemAnswer) {
+        document.getElementById("response").innerHTML = "TRUKE"
+    } else {
+        document.getElementById("response").innerHTML = "LIE NUKE"
+    }
+
 }
 
 function generateProblem(){
     calculation[0] = Math.floor(Math.random() * 10000) / 100;
     calculation[1] = Math.floor(Math.random() * 10000) / 100;
+
     calculation.sort(function(x,y){return y - x});
-    calculation[2] = calculation[0] - calculation[1]
-    document.getElementById("question1").innerHTML = calculation[0].toFixed(2) 
+
+    problemAnswer = Math.round((calculation[0] - calculation[1]) * 100) / 100;
+
+    document.getElementById("question1").innerHTML = calculation[0].toFixed(2); 
     document.getElementById("question2").innerHTML = "- " + calculation[1].toFixed(2);
+
+    document.getElementById("test").innerHTML = calculation
 }

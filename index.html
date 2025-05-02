@@ -18,11 +18,11 @@
             <!-- This should hold maths questions, with the answers typed below.-->
 
             <div class="input">
-                <input type="text" maxlength="1" class="num-input" value="0" onclick="this.select()">
-                <input type="text" maxlength="1" class="num-input" value="0" onclick="this.select()">
+                <input type="text" maxlength="1" class="num-input" placeholder="0" onclick="this.select()" id="answerEntry">
+                <input type="text" maxlength="1" class="num-input" placeholder="0" onclick="this.select()" id="answerEntry">
                 .
-                <input type="text" maxlength="1" class="num-input" value="0" onclick="this.select()">
-                <input type="text" maxlength="1" class="num-input" value="0" onclick="this.select()">
+                <input type="text" maxlength="1" class="num-input" placeholder="0" onclick="this.select()" id="answerEntry">
+                <input type="text" maxlength="1" class="num-input" placeholder="0" onclick="this.select()" id="answerEntry">
             </div>
             <!-- Four inputs for a number, 1 digit each.-->
 
@@ -38,6 +38,9 @@
 
             </div>
 
+            <div id="response">
+
+            </div>
         </div>
 
         <button onclick="generateProblem()">TEST</button>
