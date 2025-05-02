@@ -41,9 +41,9 @@ function takeInputs(){
     document.getElementById("test").innerHTML = inputAsNumber + "," + problemAnswer
 
     if (inputAsNumber === problemAnswer) {
-        document.getElementById("response").innerHTML = "TRUKE"
+        document.getElementById("response").innerHTML = "Correct"
     } else {
-        document.getElementById("response").innerHTML = "LIE NUKE"
+        document.getElementById("response").innerHTML = "False"
     }
 
 }
