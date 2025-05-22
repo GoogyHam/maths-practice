@@ -4,46 +4,60 @@
         
     </head>
     <body>
+        <div class="toplevel-container">
+            <div class="grid-container">
 
-        <div class="container">
+                <div class="header">
+                    <h2>Maths Practice</h2>
+                </div>
 
-            <div class="header">
-                <h2>Maths Practice</h2>
-            </div>
+                <div class="question" id="questionField">
+                    <p id="question1">MENTAL MATHS SUBTRACTION</p>
+                    <p id="question2">20 questions</p>
+                </div>
+                <!-- This should hold maths questions, with the answers typed below.-->
 
-            <div class="question">
-                <p id="question1"></p>
-                <p id="question2"></p>
-            </div>
-            <!-- This should hold maths questions, with the answers typed below.-->
+                <div class="answerEntry">
+                    <input type="text" maxlength="1" class="num-input" placeholder="0" onclick="this.select()" id="answerEntry" tabindex="4">
+                    <input type="text" maxlength="1" class="num-input" placeholder="0" onclick="this.select()" id="answerEntry" tabindex="3">
+                    .
+                    <input type="text" maxlength="1" class="num-input" placeholder="0" onclick="this.select()" id="answerEntry" tabindex="2">
+                    <input type="text" maxlength="1" class="num-input" placeholder="0" onclick="this.select()" id="firstTab" tabindex="1">
+                </div>
+                <!-- Four inputs for a number, 1 digit each.-->
 
-            <div class="input">
-                <input type="text" maxlength="1" class="num-input" placeholder="0" onclick="this.select()" id="answerEntry">
-                <input type="text" maxlength="1" class="num-input" placeholder="0" onclick="this.select()" id="answerEntry">
-                .
-                <input type="text" maxlength="1" class="num-input" placeholder="0" onclick="this.select()" id="answerEntry">
-                <input type="text" maxlength="1" class="num-input" placeholder="0" onclick="this.select()" id="answerEntry">
-            </div>
-            <!-- Four inputs for a number, 1 digit each.-->
-
-            <div class="submitButton">
-                <button id="submitAnswerButton">Click me!</button>
-            </div> 
-            
-            <div id="output">
+                <div class="submitButton">
+                    <button id="mainButton" tabindex="-1"></button>
+                </div>
                 
-            </div>
+                <div>
+                    Your Answer:
+                </div>
 
-            <div id="answer">
+                <div id="output">
 
-            </div>
+                </div>
 
-            <div id="response">
+                <div>
+                    Correct Answer:
+                </div>
 
+                <div id="answer">
+                </div>
+
+                <div id="response">
+                </div>
+
+                <div id="scorecard" class="scorecard">
+                </div>
+
+                <div id="timer">
+                    TIME GOES HERE
+                </div>
             </div>
         </div>
 
-        <button onclick="generateProblem()">TEST</button>
+        <p tabindex="5" id="lastTab"></p>
 
         <p id="test"></p>
         

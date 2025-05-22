@@ -2,25 +2,32 @@ body {
     background-color: wheat;
   }
 
-  .container {
+  .toplevel-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .grid-container {
     display: grid;
     grid-template-columns: auto auto auto auto auto;
 
     background-color: grey;
     padding: 10px;
+    width: 500px;
   }
 
   /* Flex Container settings*/
 
   @media (max-width:800px) {
-    .container{
+    .grid-container{
         flex-direction: column;
     }
   }
 
   /* Example, media-sensitive settings*/
   
-  .container > div {
+  .grid-container > div {
     background-color: #f1f1f1;
     margin: 1px;
     padding: 5px;
@@ -28,25 +35,30 @@ body {
     text-align: center;
   }
 
-  .container > div.header {
+  .grid-container > div.header {
     grid-area: 1 / 1 / span 2 / span 5;
     text-align: center;
   }
 
-  .container > div.question {
+  .grid-container > div.question {
     grid-area: auto / 1 / span 3 / span 5;
     font-size: 50px;
   }
 
-  .container > div.input {
+  .grid-container > div.answerEntry {
     grid-area: auto / auto / span 1 / span 5;
   }
 
-  .container > div.submitButton {
+  .grid-container > div.submitButton {
     grid-area: auto / auto / span 1 / span 5;
   }
 
-  .container > div:hover{
+  .grid-container > div.scorecard {
+    grid-area: auto / auto / span 1 / span 4;
+    align-content: center;
+  }
+
+  .grid-container > div:hover{
     background-color: turquoise;
     color: white;
     transition: all 0.3s ease;
